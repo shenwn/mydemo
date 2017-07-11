@@ -1,0 +1,297 @@
+*{
+	margin: 0; 
+	padding: 0; 
+	font-family: 'Microsoft YaHei UI'; 
+	background-color: transparent;}
+a{
+	color: #fff;
+	list-style: none;
+	text-decoration: none;
+}
+a:hover{color: orange;}
+form input:hover{border:1px solid #07cbc9;}
+.banner .form textarea:hover{border:1px solid #07cbc9;}
+span input:hover{background-color: #07cbc9;}
+.about form input:hover{
+	background-color: transparent;
+	border: 1px solid black;
+}
+.about .shade2 form input:hover{
+	background-color: transparent;
+	border: 1px solid black;
+	color: #000;
+}
+body{
+	min-width: 1200px;
+}
+/*top区*/
+.top{
+	height: 60px;
+	width: 100%;
+	line-height: 60px;
+	background: #07cbc9;
+}
+.top img{
+	margin-left: 60px;
+}
+.top ul{
+	position: absolute;
+	top: 0;
+	margin-left: 45%;
+}
+.top ul li{
+	display: inline-block;
+	float: left;
+	padding-left: 5%;
+	color: #fff;
+}
+/*banner区*/
+.banner img{
+	width: 100%;
+}
+.banner .shade1{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 60px;
+	z-index: 1;
+}
+.banner .form{
+	width: 400px;
+	height: 300px;
+	position: absolute;
+	background-color: transparent;
+	top: 50%;
+	margin-top: -150px;
+	left: 50%;
+	margin-left: -200px;
+	z-index: 2;
+}
+.form input{
+	width: 400px;
+	height: 30px;
+	margin-bottom: 20px;
+	border: 1px solid rgba(255,255,255,0.6);
+
+}
+.banner .form textarea{
+	width: 400px;
+	height: 90px;
+	margin-bottom: 20px;
+	border: 1px solid rgba(255,255,255,0.6);
+}
+.banner .form span{
+	display: block;
+
+}
+.banner .form span input{
+	display: inline-block;
+	width: 100px;
+	color: rgba(255,255,255,0.6);
+	margin-left: 150px;
+	/* opacity: 0.5; */
+}
+/*about区*/
+.about{
+	width: 100%;
+	text-align: center;
+}
+ .about .box{
+ 	height: 300px;
+ 	width: 700px;
+ 	margin: 0 auto;
+ }
+ .about h2{
+ 	text-align: center;
+ 	margin-top: 30px;
+ }
+ .about .span1{
+ 	display: inline-block;
+ 	width: 30px; 
+ 	border: 1px #07cbc9 solid; 
+ }
+ p{
+ 	text-align: center;
+ 	color: gray;
+ 	font-size: 12px;
+ 	line-height: 20px;
+ 	margin-top: 10px;
+ 	margin-bottom: 10px;
+ }
+ .clear{clear: both;}
+ /*about三列区*/
+ .about .box .middle img{
+ 	width: 400px;
+ 	height: 250px;
+ }
+ .about .left{
+ 	 float: left; 
+ }
+ .about .box .left .span2{
+ 	display: block;
+ 	width: 154px;
+ 	height: 100px;
+ 	line-height: 30px;
+ 	font-weight: 400;
+ 	font-size: 20px;
+ 	text-align: center;
+ }
+ .about .box .right{
+ 	float: left;
+ }
+ .about .box .right .right1{
+ 	border: 1px solid #07cbc9;
+ 	height: 100px;
+ 	width: 120px;
+ 	margin-left: 20px;
+ 	font-size: 20px;
+ 	color: #000;
+ 	margin-top: 0px;
+ 	line-height: 10px;
+ 	margin-bottom: 20px;
+ }
+ .about .box .right .right1 .span3{
+ 	display: block;
+ 	font-size: 20px;
+ 	margin-top: 20px;
+
+ }
+.about .box .right .right1 .span4{
+	display: inline-block;
+	height: 0px;
+ 	width: 30px; 
+ 	border: 1px #07cbc9 solid;
+ 	vertical-align: top;
+ }
+ .about .box .right .right1 .span5{
+ 	display: block;
+ 	font-size: 14px;
+ 	line-height: 14px;
+ }
+ .about .box .middle{
+ 	float: left;
+ }
+ /*about遮罩层区*/
+ .about .box .shade2{
+	position: absolute;
+	margin-top: 60px;
+	border: 1px solid gray;
+	height: 170px;
+	width: 240px;
+
+ }
+ .about .box .shade2 p{
+ 	display: inline-block;
+ 	position: relative;
+ 	margin-top: 0px;
+ 	padding-right: 0;
+ 	font-size: 13px;
+ 	color: #000;
+ 	text-align: left;
+ 	padding-left: 10px;
+ 	padding-top: 10px;
+ }
+ .about .box .shade2 input{
+ 	width: 100px;
+ 	background: #000;
+ 	border: none;
+ 	height: 30px;
+ 	color: #fff;
+ 	margin-left: 10px;
+ }
+ /*about区下intro区*/
+ .eight-box{
+ 	width: 100%;
+ 	height: 700px;
+ }
+ .about .intro{
+ 	width: 100%;
+ 	height: 100%;
+ }
+ .about .intro div{
+ 	width: 25%;
+ 	height: 50%;
+ 	float: left;
+ }
+ .about .intro img{
+ 	width: 100%;
+ 	height: 100%;
+ }
+ .about .intro .intro1,.intro2,.intro3,.intro4,.intro5,.intro6,.intro7,.intro8{
+ 	background: #07cbc9;
+ }
+ .about .intro .box-four{
+ 	float: none;
+ 	width: 90%;
+ 	padding-left: 20px;
+ 	color: #fff;
+ 	background: #07cbc9;
+ }
+ .about .intro .box-four h3,h6{
+ 	margin-top: 20px;
+ 	text-align: left;
+ }
+ .about .intro .box-four p{
+	text-align: left;
+	color: #fff;
+ }
+.intro input{
+ 	text-align: center;
+ 	background: #000;
+ 	color: #fff;
+ 	height: 30px;
+ 	border: none;
+ 	width: 100px;
+ 	margin-top: 50px;
+ }
+ /*gallery区*/
+ .gallery{
+ 	width: 708px;
+ 	height: 520px;
+ 	text-align: center;
+ 	margin: 0 auto;
+ 	margin-top: 30px;
+ }
+.gallery .span6{
+	display: inline-block;
+	width: 30px;
+	border: 1px #07cbc9 solid;
+}
+.gallery img{
+ 	width: 222px;
+ 	height: 149px;
+ 	margin-top: 15px;
+ }
+.gallery dl{
+ 	float: left;
+ }
+.gallery p{
+	margin-bottom: 20px;
+}
+.gallery .dl2,.dl5{
+	margin-left: 20px;
+	margin-right: 20px;
+}
+.gallery dl dd{
+	height: 40px;
+	background: #000;
+	color: #fff;
+	margin-top: 0px;
+	position: relative;
+	top: -5px;
+	font-size: 12px;
+	text-align: left;
+	line-height: 40px;
+}
+/*foot区*/
+.foot{
+	width: 100%;
+	height: 40px;
+	background: #07cbc9;
+	margin-top: 30px;
+}
+.foot p{
+	color: #fff;
+	line-height: 40px;
+}
+

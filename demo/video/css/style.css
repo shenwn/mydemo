@@ -1,0 +1,221 @@
+*{
+	margin: 0;
+	padding: 0;
+	border: none;
+	font-size: 14px;
+}
+.vContainer {
+	width: 680px;
+	height: 400px;
+	margin: 0 auto;
+	position: relative;
+	overflow: hidden;
+}
+/* 视频区 */
+.video {
+	width: 100%;
+	height: 100%;
+	/* margin: 0px 20px 0 20px; */
+	position: relative;
+}
+.shade{
+	width: 100%;
+	height: 100%;
+	background: rgba(255,255,255,.1);
+	position: absolute;
+	top:0;
+	left:0;
+	z-index: 1;
+	overflow: hidden;
+}
+.shade >img {
+	display: none;
+	width: 100px;
+	height: 100px;
+	position: absolute;
+	top:0;
+	right:0;
+	bottom:0;
+	left:0;
+	margin:auto;
+}
+/* 控制器区 */
+.control {
+	width: 100%;
+	height: 40px;
+	position: absolute;
+	bottom:0;
+	left: 0;
+	background: #fff;
+	z-index: 2;
+}
+.control .top {
+	height: 8px;
+	border-bottom: 2px solid #ccc;
+}
+.control .top .timeTip {
+	position: absolute;
+	top:-20px;
+	left: 0px;
+	width: 20px;
+	height: 12px;
+	color: #fff;
+}
+.control .top .progress{
+	height: 8px;
+	border-bottom: 2px solid #ccc;
+	z-index: 1;
+	cursor: pointer;
+	width: 100%;
+	position: relative;
+}
+.control .top .progress .progressMark {
+	width: 0px;
+	height: 2px;
+	position: absolute;
+	bottom:-2px;
+	z-index: 2;
+	background: #00f;
+}
+.control .top .progress .progressDot{
+	display: block;
+	width: 10px;
+	height: 10px;
+	border-radius: 50%;
+	background: blue;
+	position: absolute;
+	top: 3px;
+	z-index: 2;
+	cursor: pointer;
+}
+
+.control .bottom {
+	height: 40px;
+	width: 100%;
+	position: absolute;
+    top:10px;
+	left:0;
+	/* overflow: hidden; */
+}
+.control .bottom .pause {
+	position: relative;
+	left: 20px;
+	top: 0;
+	width: 20px;
+    height: 20px;
+	padding: 10px 0;
+}
+.control .bottom .pause img{
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 20px;
+	height: 20px;
+	padding: 10px 0;
+	cursor: pointer;
+}
+.control .bottom .time {
+	position: absolute;
+	height: 40px;
+	line-height: 40px;
+	top:0;
+	left: 10%;
+}
+.control .bottom .volume {
+	height: 40px;
+	width: 40px;
+	position: absolute;
+	top:0;
+	left: 50%;
+}
+.control .bottom .volume img{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 20px;
+	height: 20px;
+	padding: 10px;
+	cursor: pointer;
+}
+.control .bottom .volume .volumnBar {
+	position: absolute;
+	top: 0;
+	left: 40px;
+	width: 100px;
+	height: 6px;
+	margin: 17px 0;
+	background: #ccc;
+	border-radius: 5px;
+	cursor: pointer;
+}
+.control .bottom .volume .volumnDot {
+	display: block;
+	width: 10px;
+	height: 10px;
+	margin-left: -5px;
+	border-radius: 50%;
+	background: blue;
+	position: absolute;
+	top: -2px;
+	left: 50%;
+	z-index: 2;
+}
+.control .bottom .volume .sound {
+	position: absolute;
+	display: block;
+	top: 0;
+	width: 50%;
+	height: 6px;
+	background: blue;
+	border-radius: 5px;
+}
+
+
+.control .bottom .speed {
+	position: absolute;
+	top: 0;
+	left: 80%;
+	height: 20px;
+	width: 60px;
+	margin: 10px 0;
+}
+.control .bottom .speed ul {
+	position: absolute;
+	top: -120px;
+	height: 150px;
+	width: 70px;
+	display: none;
+	z-index:3;
+}
+.control .bottom .speed ul li {
+	list-style-type: none;
+	line-height: 30px;
+	height: 30px;
+	text-align: center;
+
+	cursor: pointer;
+	background: #fff;
+}
+.control .bottom .speed .selected {
+	display: block;
+	height: 20px;
+	width: 50px;
+	margin: 0 10px;
+	line-height: 20px;
+	text-align: center;
+	border-radius: 5px;
+	background: #ccc;
+	cursor: pointer;
+
+}
+.control .bottom .allScreen {
+	position: absolute;
+	top: 0;
+	left: 95%;
+	margin: 10px 0;
+}
+.control .bottom .allScreen img{
+	width: 20px;
+	height: 20px;
+	cursor: pointer;
+}

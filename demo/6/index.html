@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="./css/index.css">
+	<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+	<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>	
+	<title>Document</title>
+</head>
+<body>
+	<header>
+		<div class="navbar navbar-inverse">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+				 <a class="navbar-brand" href="#">IMOOC</a>
+					<ul class="nav nav-pills pull-right visible-xs-inline">
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></a>
+						</li>
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></a>
+						</li>
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span></a>
+						</li>
+					</ul>
+				</div>
+		
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+					<ul class="nav navbar-nav">
+						<li class="dropdown"><a href="#" class="active">首页</a></li>
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">生日<span class="caret"></span></a>
+							<div class="container-fluid dropdown-menu">
+								<ul class="col-md-3">
+									<li class="title">关系</li>
+									<li><a href="#">朋友</a></li>
+									<li><a href="#">家人</a></li>
+									<li><a href="#">姐妹</a></li>
+								</ul>
+								<ul class="col-md-3">
+									<li class="title">风味</li>
+									<li><a href="#">巧克力</a></li>
+									<li><a href="#">水果</a></li>
+								</ul>
+							</div>
+						</li>
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">婚礼<span class="caret"></span></a>
+							<div class="container-fluid dropdown-menu">
+								<ul class="col-md-3">
+									<li class="title">关系</li>
+									<li><a href="#">朋友</a></li>
+									<li><a href="#">家人</a></li>
+									<li><a href="#">姐妹</a></li>
+								</ul>
+								<ul class="col-md-3">
+									<li class="title">风味</li>
+									<li><a href="#">巧克力</a></li>
+									<li><a href="#">水果</a></li>
+								</ul>
+								<ul class="col-md-3">
+									<li class="title">主旋律</li>
+									<li><a href="#">心影</a></li>
+									<li><a href="#">卡通</a></li>
+								</ul>
+							</div>
+						</li>
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">专用<span class="caret"></span></a>
+							<div class="container-fluid dropdown-menu">
+								<ul class="col-md-3">
+									<li class="title">关系</li>
+									<li><a href="#">朋友</a></li>
+									<li><a href="#">家人</a></li>
+									<li><a href="#">姐妹</a></li>
+								</ul>
+								<ul class="col-md-3">
+									<li class="title">风味</li>
+									<li><a href="#">巧克力</a></li>
+									<li><a href="#">水果</a></li>
+								</ul>
+							</div>
+						</li>
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">商铺<span class="caret"></span></a>
+							<div class="container-fluid dropdown-menu">
+								<ul class="col-md-3">
+									<li class="title">关系</li>
+									<li><a href="#">朋友</a></li>
+									<li><a href="#">家人</a></li>
+									<li><a href="#">姐妹</a></li>
+								</ul>
+								<ul class="col-md-3">
+									<li class="title">风味</li>
+									<li><a href="#">巧克力</a></li>
+									<li><a href="#">水果</a></li>
+								</ul>
+							</div>
+						</li>
+					</ul>
+					<ul class="nav nav-pills navbar-right hidden-xs">
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></a>
+							<div class="container-fluid dropdown-menu" id="header-search">
+								<span class="glyphicon glyphicon-triangle-top"></span>
+								<div class="row">
+										<div class="col-sm-12">
+									    <div class="input-group">
+									      <input type="search" class="form-control">
+									      <span class="input-group-btn">
+									        <button class="btn btn-default" type="button">搜</button>
+									      </span>
+									    </div>
+									  </div>
+								</div>
+							</div>
+						</li>
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></a>
+							<div class="container-fluid dropdown-menu" id="header-form">
+								<span class="glyphicon glyphicon-triangle-top"></span>
+								<div class="row">
+									<div class="col-sm-12">
+									    <form>
+											<div class="form-group">
+											    <label for="exampleInputEmail1">Email address</label>
+											    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+											</div>
+											<div class="form-group">
+												<label for="exampleInputPassword1">Password</label>
+												<input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+											</div>
+											<button type="submit" class="btn  btn-block">登录</button>
+											<div class="checkbox">
+												<label>
+												    <input type="checkbox"><i>记住</i>
+												</label>
+											</div>
+											<p class="help-block">新用户？<a href="#">注册</a> | <a href="#">忘记密码</a></p>
+										</form>
+									  </div>
+								</div>
+							</div>
+						</li>
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span></a>
+							<div class="container-fluid dropdown-menu" id="header-shop">
+								<span class="glyphicon glyphicon-triangle-top"></span>
+								<div class="row">
+									<div class="col-sm-12">
+										<p class="text-center">$0.00(0)</p>
+									    <button class="btn btn-block">空</button>
+									</div>
+								</div>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>	
+	</header>
+	<section class="banner">
+		<div class="container-fluid">
+			<div class="col-md-7 col-ms-7 col-xs-7 col-lg-7 banner-left">
+				<h1>IMOOC <b>蛋糕</b></h1>
+				<p>特别的日子，特别的你</p>
+				<button class="col-md-4 col-ms-7 col-xs-5 col-lg-4">SHOP NOW</button>
+			</div>
+			<div class="col-md-5 col-ms-5 col-xs-5 col-lg-5">
+				<img src="./image/2.png" class="img-responsive">
+			</div>
+		</div>
+	</section>
+	<section class="gallery">
+		<div class="container-fluid">
+			<div class="row">
+				<dl class="col-md-8 col-sm-8 col-xs-8">
+					<dt>
+						<img src="./image/g1.jpg">
+						<p>
+							<span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>View
+							<span class="pull-right"> SHOW NOW </span>
+						</p>
+					</dt>
+					<dd>Lorem ipsum is simply</dd>
+					<dd>
+						<span class="bg-img"></span>
+						<span>$95.00</span>
+					</dd>
+				</dl>
+				<dl class="col-md-4 col-sm-4 col-xs-4">
+					<dt>
+						<img src="./image/g2.jpg">
+						<p>
+							<span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>View
+							<span class="pull-right"> SHOW NOW </span>
+						</p>
+					</dt>
+					<dd>Lorem ipsum is simply</dd>
+					<dd>
+						<span class="bg-img"></span>
+						<span>$95.00</span>
+					</dd>
+				</dl>
+			</div>
+			<div class="row">
+				<dl class="col-md-8 col-sm-8 col-xs-12" hidden>
+					<dt>
+						<img src="./image/g1.jpg">
+						<p>
+							<span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>View
+							<span class="pull-right"> SHOW NOW </span>
+						</p>
+					</dt>
+					<dd>Lorem ipsum is simply</dd>
+					<dd>
+						<span class="bg-img"></span>
+						<span>$95.00</span>
+					</dd>
+				</dl>
+				<dl class="col-md-4 col-sm-4 col-xs-6" hidden>
+					<dt>
+						<img src="./image/g2.png">
+						<p>
+							<span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>View
+							<span class="pull-right"> SHOW NOW </span>
+						</p>
+					</dt>
+					<dd>Lorem ipsum is simply</dd>
+					<dd>
+						<span class="bg-img"></span>
+						<span>$95.00</span>
+					</dd>
+				</dl>
+				<dl class="col-md-3 col-sm-4 col-xs-6">
+					<dt>
+						<img src="./image/g3.png">
+						<p>
+							<span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>View
+							<span class="pull-right"> SHOW NOW </span>
+						</p>
+					</dt>
+					<dd>Lorem ipsum is simply</dd>
+					<dd>
+						<span class="bg-img"></span>
+						<span>$95.00</span>
+					</dd>
+				</dl>
+				<dl class="col-md-3 col-sm-4 col-xs-6">
+					<dt>
+						<img src="./image/g4.png">
+						<p>
+							<span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>View
+							<span class="pull-right"> SHOW NOW </span>
+						</p>
+					</dt>
+					<dd>Lorem ipsum is simply</dd>
+					<dd>
+						<span class="bg-img"></span>
+						<span>$95.00</span>
+					</dd>
+				</dl>
+				<dl class="col-md-3 col-sm-4 col-xs-6">
+					<dt>
+						<img src="./image/g5.png">
+						<p>
+							<span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>View
+							<span class="pull-right"> SHOW NOW </span>
+						</p>
+					</dt>
+					<dd>Lorem ipsum is simply</dd>
+					<dd>
+						<span class="bg-img"></span>
+						<span>$95.00</span>
+					</dd>
+				</dl>
+				<dl class="col-md-3 col-sm-4 col-xs-6">
+					<dt>
+						<img src="./image/g6.png">
+						<p>
+							<span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>View
+							<span class="pull-right"> SHOW NOW </span>
+						</p>
+					</dt>
+					<dd>Lorem ipsum is simply</dd>
+					<dd>
+						<span class="bg-img"></span>
+						<span>$95.00</span>
+					</dd>
+				</dl>
+				<dl class="col-md-3 col-sm-4 col-xs-6">
+					<dt>
+						<img src="./image/g7.png">
+						<p>
+							<span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>View
+							<span class="pull-right"> SHOW NOW </span>
+						</p>
+					</dt>
+					<dd>Lorem ipsum is simply</dd>
+					<dd>
+						<span class="bg-img"></span>
+						<span>$95.00</span>
+					</dd>
+				</dl>
+				<dl class="col-md-3 col-sm-4 col-xs-6">
+					<dt>
+						<img src="./image/g8.png">
+						<p>
+							<span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>View
+							<span class="pull-right"> SHOW NOW </span>
+						</p>
+					</dt>
+					<dd>Lorem ipsum is simply</dd>
+					<dd>
+						<span class="bg-img"></span>
+						<span>$95.00</span>
+					</dd>
+				</dl>
+				<dl class="col-md-3 col-sm-4 col-xs-6">
+					<dt>
+						<img src="./image/g9.png">
+						<p>
+							<span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>View
+							<span class="pull-right"> SHOW NOW </span>
+						</p>
+					</dt>
+					<dd>Lorem ipsum is simply</dd>
+					<dd>
+						<span class="bg-img"></span>
+						<span>$95.00</span>
+					</dd>
+				</dl>
+				<dl class="col-md-3 col-sm-4 col-xs-6">
+					<dt>
+						<img src="./image/g10.png">
+						<p>
+							<span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>View
+							<span class="pull-right"> SHOW NOW </span>
+						</p>
+					</dt>
+					<dd>Lorem ipsum is simply</dd>
+					<dd>
+						<span class="bg-img"></span>
+						<span>$95.00</span>
+					</dd>
+				</dl>
+			</div>
+		</div>
+	</section>
+	<section class="subscribe">
+		<h1>Newsletter</h1>
+		<div class="subscribe-form">
+			<form class="form-horizontal form-group-md">
+				<div class="form-group">
+					<div class="input-group">
+					<input type="email" class="form-control" placeholder="Email">
+					<div class="input-group-addon btn">Subscribe</div>
+					</div>
+				</div>	
+			</form>
+		</div>
+	</section>
+	<section class="footer-booter">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-md-3 col-ms-4 col-xs-4">
+					<p class="title">COMPANY</p>
+					<p>Products</p>
+					<p>Work Here</p>
+					<p>Team</p>
+					<p>Happenings</p>
+					<p>Dealer Locator</p>
+				</div>
+				<div class="col-md-3 col-ms-4 col-xs-4">
+					<p  class="title">SERVICE</p>
+					<p>FAQ</p>
+					<p>Warranty</p>
+					<p>Contact Us</p>
+				</div>
+				<div class="col-md-3 col-ms-4 col-xs-4">
+					<p  class="title">ORDER &amp; RETURNS</p>
+					<p>FAQ</p>
+					<p>Warranty</p>
+					<p>Contact Us</p>
+				</div>
+				<div class="col-md-3 col-ms-4 col-xs-4">
+					<p  class="title">LECAL</p>
+					<p>Privocy</p>
+					<p>Warranty</p>
+					<p>Contact Us</p>
+				</div>
+			</div>
+		</div>
+	</section>
+	<footer>
+		<div class="container-fluid">
+			Copyright&copy;2017imooc.comAllRight Reserved|京ICP备13046642号2
+		</div>
+	</footer>
+<script type="text/javascript" src="./js/index.js"></script>
+
+
+</body>
+</html>
