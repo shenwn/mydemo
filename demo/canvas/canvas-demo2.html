@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>canvas</title>
+	<style type="text/css">
+		div{
+			height: 500px;
+			width: 500px;
+			border: 1px solid #f00;
+			position:absolute;
+			top:0;
+			bottom: 0;
+			left:0;
+			right:0;
+			margin:auto;
+		}
+	</style>
+</head>
+<body>
+	<div><canvas id="canvas"></canvas></div>
+	<script type="text/javascript">
+		window.onload = function(){
+			var canvas = document.getElementById("canvas");
+			var context = canvas.getContext("2d");
+			var height = 500;
+			var width = 500;
+			canvas.height = height;
+			canvas.width = width;
+
+			/**
+			 * [drawCircle 时钟表盘]
+			 * @param  {[type]} cxt [渲染环境]
+			 * @param  {number} r   [半径]
+			 * @return {[type]}     [表盘]
+			 */
+			function drawCircle(cxt,x,y,r){
+				cxt.beginPath();
+				cxt.fillStyle = "#ff0";
+				cxt.arc(x,y,r,r,0,Math.PI*2);
+				cxt.fill();
+				cxt.closePath();
+			}
+			
+
+			/**
+			 * [drawColor 生成随机颜色]
+			 * @return {string} [rgb]
+			 */
+			function drawColor (){
+				var R = Math.floor(Math.random()*255),
+					G = Math.floor(Math.random()*255),
+					B = Math.floor(Math.random()*255),
+					color = 'rgb('+R+','+G+','+B+')';
+				return color;
+			}
+
+
+			/**
+			 * [drawDot 分针刻度盘]
+			 * @param  {[type]} cxt   [上下文]
+			 * @param  {number} x     [圆心坐标x]
+			 * @param  {number} y     [圆心中标y]
+			 * @param  {number} r     [小圆半径]
+			 * @param  {number} R     [分针刻度盘半径]
+			 * @param  {string} color [颜色]
+			 * @return {[type]}       [60个刻度]
+			 */
+			function drawDot(cxt,x,y,r,R1,color){
+				for(var i = 0; i < 360; i += 6){
+					cxt.beginPath();
+					cxt.fillStyle = "#66f";
+					var x = 250 + R1*Math.cos((i*Math.PI)/180);
+					var y = 250 + R1*Math.sin((i*Math.PI)/180);
+					cxt.arc(x,y,r,0,Math.PI*2);
+					cxt.fill();
+					cxt.closePath();
+				}
+			}
+			
+
+			/**
+			 * [drawRect 时针刻度]
+			 * @param  {[type]} cxt    [上下文环境]
+			 * @param  {number} x      [圆心坐标x]
+			 * @param  {number} y      [圆心坐标y]
+			 * @param  {number} r      [时针刻度盘半径]
+			 * @param  {number} width  [每个刻度的宽度]
+			 * @param  {number} height [每个刻度的高度]
+			 * @return {[type]}        [12个刻度]
+			 */
+			function drawRect(cxt,x,y,r,width,height){
+				for(var i = 0; i < 360; i+=30){
+					cxt.save();
+					cxt.translate(x,y);
+					cxt.beginPath();
+					cxt.fillStyle = "#63c";
+					cxt.rotate(i*Math.PI/180);
+					cxt.fillRect(-width/2,-r-height/2,width,height);
+					cxt.closePath();
+					cxt.restore();
+				}
+			}
+			
+
+			/**
+			 * [drawNumber 刻度盘数字]
+			 * @param  {[type]} cxt [上下文环境]
+			 * @param  {number} R   [数字盘围绕半径]
+			 * @return {[type]}     [description]
+			 */
+			function drawNumber(cxt,R){
+				for(var i = 0; i <12; i++){
+					cxt.beginPath();
+					var j = i+3;
+					if(j>12){
+						j-=12;
+					}
+					cxt.font = "bold 18px sanserif";
+					var x = 250+R*Math.cos((i*30*Math.PI)/180);
+					var y = 250+R*Math.sin((i*30*Math.PI)/180);
+					cxt.textAlign = 'center';
+					cxt.textBaseline = 'middle';
+					cxt.fillStyle = "#f63";
+					cxt.fillText(j,x,y);
+					cxt.closePath();
+				}
+			}
+			
+			/**
+			 * [drawHours 实现指针]
+			 * @param  {[type]} cxt    [上下文环境]
+			 * @param  {[type]} x      [圆心坐标x]
+			 * @param  {[type]} y      [圆心坐标y]
+			 * @param  {[type]} width  [指针宽度]
+			 * @param  {[type]} height [指针长度]
+			 * @param  {[type]} s      [指针偏移量]
+			 * @param  {[type]} deg    [旋转角度]
+			 * @return {[type]}        [description]
+			 */
+			function drawTimes(cxt,x,y,width,height,s,deg,color){
+				cxt.save();
+				cxt.translate(x,y);
+				cxt.beginPath();
+				cxt.rotate((deg+180)*Math.PI/180);
+				cxt.moveTo(-width/2,-s);
+				cxt.lineTo(width/2,-s);
+				cxt.lineTo(width/4,height);
+				cxt.lineTo(-width/4,height);
+				cxt.fillStyle = color;
+				cxt.fill();
+				cxt.closePath();
+				cxt.restore();
+			}
+			
+
+			/**
+			 * [getTime 显示时间]
+			 * @param  {[type]} cxt [上下文环境]
+			 * @return {[type]}     [description]
+			 */
+			function getTime(cxt){
+				var date = new Date();
+				var H = date.getHours();
+				var M = date.getMinutes();
+				var S = date.getSeconds();
+				var H_deg = (H+M/60)*30;
+				var M_deg = (M+S/60)*6;
+				var S_deg = S*6;
+				var convas = cxt.canvas;
+				cxt.clearRect(0,0,canvas.width,canvas.height);
+				drawDot(context,250,250,4,220,"#000");
+				drawRect(context,250,250,220,10,30);
+				drawNumber(context,190);
+				drawTimes(cxt,250,250,8,130,30,H_deg,"#99c");
+				drawTimes(cxt,250,250,8,150,40,M_deg,"#9cc");
+				drawTimes(cxt,250,250,8,170,20,S_deg,"#9cf");
+				drawCircle(context,250,250,5);
+			}
+
+		setInterval(function(){
+			getTime(context);
+		},100);
+
+		
+		}
+
+
+	</script>
+</body>
+</html>

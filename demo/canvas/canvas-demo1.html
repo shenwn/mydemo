@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>test</title>
+	<style type="text/css">
+		.balls{
+			height: 600px;
+			width: 1000px;
+			border: 1px solid #ccc;
+			margin: 10px auto;
+		}
+		.write{
+			width: 200px;
+			height: 200px;
+			background: #ccc;
+		}
+	</style>
+</head>
+<body>
+	<div class="balls"><canvas id="canvas"></canvas></div>
+	<script type="text/javascript">
+		window.onload = function(){
+			var canvas = document.getElementById('canvas');
+			var context = canvas.getContext('2d');
+			canvas.width = 1000;
+			canvas.height = 600;
+			var balls = [];
+
+			/**
+			 * [drawColor 生成随机颜色]
+			 * @return {string} [rgb]
+			 */
+			function drawColor (){
+				var R = Math.floor(Math.random()*255),
+					G = Math.floor(Math.random()*255),
+					B = Math.floor(Math.random()*255),
+					color = 'rgb('+R+','+G+','+B+')';
+				return color;
+			}
+
+
+			/**
+			 * [getCircle 产生带初速度的随机小球]
+			 * @param  {[type]} cxt    [上下文环境]
+			 * @param  {number} number [小球的个数]
+			 * @param  {number} w      [画布宽度]
+			 * @param  {number} h      [画布高度]
+			 * @param  {number} ra     [小球最小半径]
+			 * @param  {number} rb     [小球最大半径]
+			 * @param  {number} va     [小球最小速度]
+			 * @param  {number} vb     [小球最大速度]
+			 * @return {array}        [balls]
+			 */
+			function getCircle(cxt,number,w,h,ra,rb,va,vb){
+				for(var i=0;i<number;i++){
+					var color = drawColor ();
+					var r = Math.floor(Math.random()*ra+rb);
+					var x = Math.floor((Math.random()*(w-2*r))+r);
+					var y = Math.floor((Math.random()*(h-2*r))+r);
+					var vx = Math.floor(Math.random()*va+vb)*Math.pow(-1,Math.floor(Math.random()*100));
+					var vy = Math.floor(Math.random()*va+vb)*Math.pow(-1,Math.floor(Math.random()*100));
+					ball = {
+						x:x,
+						y:y,
+						r:r,
+						color:color,
+						vx:vx,
+						vy:vy
+					}
+					balls[i]=ball;
+					
+				}
+				console.log(balls);
+				return balls;
+			}
+			
+
+			/**
+			 * [drawballs 绘制小球]
+			 * @param  {[type]} cxt [上下文环境]
+			 * @return {[type]}     [description]
+			 */
+			function drawballs(cxt,opacity){
+				var convas = cxt.canvas;
+				cxt.clearRect(0,0,canvas.width,canvas.height);
+				context.globalAlpha = opacity; //透明度
+				for(var i=0 in balls){
+					cxt.globalCompositeOperation = 'lighter'; 
+					cxt.beginPath();
+					cxt.fillStyle = balls[i].color;
+					cxt.arc(balls[i].x, balls[i].y, balls[i].r ,0 , 2*Math.PI);
+					cxt.closePath();
+					cxt.fill();
+				}
+			}
+			
+			/**
+			 * [updateballs 更新小球的位置]
+			 * @param  {[type]} w [画布宽度]
+			 * @param  {[type]} h [画布高度]
+			 * @return {[type]}   [description]
+			 */
+			function updateballs(w,h){
+				for(var i=0; i<balls.length;i++){
+					balls[i].x += balls[i].vx;
+					balls[i].y += balls[i].vy;
+					if(balls[i].x-balls[i].r<=0){
+						balls[i].x = balls[i].r;
+						balls[i].vx = -balls[i].vx;
+					}
+					if(balls[i].y-balls[i].r<=0){
+						balls[i].y = balls[i].
+						r;
+						balls[i].vy = -balls[i].vy;
+					}
+					if(balls[i].x+balls[i].r>=w){
+						balls[i].vx = -balls[i].vx;
+						balls[i].x = w - balls[i].r;
+					}
+					if(balls[i].y+balls[i].r>=h){
+						balls[i].vy = -balls[i].vy;
+						balls[i].y = h - balls[i].r;
+					}
+				}
+			}
+
+			getCircle(context,80,1000,600,20,40,1,10);
+			setInterval(function(){
+				drawballs(context,.7);
+				updateballs(1000,600);
+			},50);
+		}
+	</script>
+</body>
+</html>

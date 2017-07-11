@@ -1,0 +1,324 @@
+*{
+	margin:0;
+	padding: 0;
+}
+body{
+	font-size: 14px;
+}
+a{
+	text-decoration: none;
+}
+//预定义样式
+.fl(){
+	float: left;
+}
+.fr(){
+	float: right;
+}
+#bg-color(@name){
+	&when(@name=dark){
+		background+_: #000;
+	}
+	&when(@name=gray){
+		background+_: #363c41;
+	}
+	&when(@name=tran){
+		background+_: transparent;
+	}
+	&when(@name=course){
+		background+_: #07111b;
+	}
+	&when(@name=info){
+		background+_: #959aa0;
+	}
+	&when(@name=price){
+		background+_: #f00;
+	}
+}
+#font-size(@name){
+	&when(@name=small){
+		font-size: 14px;
+	}
+	&when(@name=large){
+		font-size: 16px;
+	}
+	&when(@name=xs){
+		font-size: 12px;
+	}
+}
+#squre(@pixl){
+	height:@pixl;
+	width: @pixl;
+}
+
+#layout(@name){
+	&when(@name=header){
+		height: 60px;
+		width: 100%;
+	}
+	&when(@name=banner){
+		height: 560px;
+		width: 100%;
+	}
+	&when(@name=course){
+		height: 980px;
+		width: 100%;
+	}
+	&when(@name=footer){
+		height: 95px;
+		width: 100%;
+	}
+	position:relative;
+}
+
+/* 头部样式 */
+.header{
+	#layout(header);
+	#bg-color(dark);
+	.logo{
+		.fl();
+	  	height: 40px;
+	  	width: 128px;
+	  	margin: 10px 25px;
+	  }
+	.nav{
+		line-height: 60px;
+		margin-left: 30px;
+		.fl();
+		&_item{
+			line-height: 60px;
+			padding: 0px 20px;
+			color: #fff;
+			.fl();
+			&:hover{
+				#bg-color(gray);
+			}
+		}
+		.nav_item_icon_new{
+			background+_: url('../image/icon-new.png') no-repeat 75px 10px;
+			#bg-color(gray);
+		}
+	}
+	.search_header{
+		height: 40px;
+		width: 275px;
+		margin: 10px 20px;
+		.fr();
+		border-bottom: 1px solid #999;
+		position: relative;
+		input{
+			width: 100%;
+			height: 100%;
+			border: none;
+			#bg-color(tran);
+			color: #ccc;
+			line-height: 40px;
+			&:focus{
+				outline: 0;
+			}
+		}
+		&::before{
+			content:"前端入门";
+			display: block;
+			height: 30px;
+			width: 72px;
+			line-height: 30px;
+			text-align: center;
+			color: #999;
+			#bg-color(gray);
+			position: absolute;
+			top:8px;
+			left:0;
+		}
+		&_submit{
+			display: block;
+			#squre(22px);
+			background: #f00;
+			position: absolute;
+			top: 9px;
+			right:20px;
+			background: url('../image/icon-1-sprite_w22.png') no-repeat 0 0px;
+		}
+	}
+	.personal{
+		width:190px;
+		height: 60px;
+		line-height: 60px;
+		.fr();
+		margin-right: 25px;
+		&_item{
+			display: block;
+			.fl();
+			position: relative;
+			#squre(60px);
+		}
+
+		&_left:before,
+		&_medium:before,
+		&_right:before{
+			content:"";
+			display: block;
+			position: absolute;
+			top: 19px;
+			left: 19px;
+			#squre(22px);
+
+		}
+		&_left:before{
+			background:url('../image/shopcar.png') no-repeat 0px -210px;
+		}
+
+		&_medium:before{
+			background+_:url('../image/icon-1-sprite_w22.png') no-repeat 0px 0px;
+		}
+		&_right:before{
+			top: 12px;
+			left: 12px;
+			#squre(36px);
+			background+_:url('../image/ava.jpg') no-repeat;
+			background-size: 100% 100%;
+			border-radius: 50%;
+		}  
+	}
+}
+/* banner区 */
+.banner{
+	#layout(banner);
+	background: url('../image/bg.jpg') no-repeat;
+	background-size: 100% 100%;
+}
+/* course区 */
+.course{
+	#layout(course);
+	.contaniter{
+		width: 1200px;
+		margin: 0 auto;
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		justify-content: space-around;
+		margin-top: -120px;
+		.course-item{
+			width: 285px;
+			height:300px;
+			margin: 10px auto;
+			display: flex;
+			flex-direction: column;
+			box-shadow: 1px 2px 7px 1px #ccc;
+			.course_bg{
+				width: 100%;
+				height: 110px;
+				img{
+					width: 100%;
+					height: 100%;
+				}
+			}
+			.info{
+				width: 230px;
+				height: 110px;
+				margin: 0 auto;
+				position: relative;
+				border-bottom: 1px solid #ccc;
+				p{
+					margin-top: 28px;
+					line-height: 20px;
+					#font-size(large);
+					font-weight: bold;
+					color:#07111b;
+				}
+				span{
+					display: block;
+					position: absolute;
+					bottom: 13px;
+					left:0;
+					line-height: 20px;
+					line-height: 14px;
+					#font-size(small);
+					color: #959aa0;
+				}
+			}
+			.price{
+				box-sizing: border-box;
+				width: 100%;
+				height: 90px;
+				padding-top: 40px;
+				text-indent: 28px;
+				color: #f00;
+				#font-size(large);
+			}
+		}
+	}
+}
+/* footer区 */
+.footer{
+	#layout(footer);
+	#bg-color(dark);
+	color: #fff;
+	.contaniter{
+		width: 1200px;
+		height: 100%;
+		margin: 0 auto;
+		.link{
+			.fl();
+			color: #959aa0;
+			.link_nav{
+				a{
+					display: inline-block;
+					margin: 30px 30px 14px 0;
+					#font-size(small);
+					color: #959aa0;
+					&:hover{
+						color: #fff;
+					}
+				}
+			}
+			p{
+				#font-size(xs);
+			}
+		}
+		.login-ways{
+			.fr();
+			margin: 30px auto;
+			a{
+				display: inline-block;
+				height: 33px;
+				width: 33px;
+				background+_: url('../image/footer-sprite-01.png') no-repeat;
+				border-radius: 50%;
+				position: relative;
+				background-color+_:rgba(0,0,0,1);
+				&:hover{
+					background+_: url('../image/footer-sprite-02.png') no-repeat;
+				}
+			}
+			.first{
+				background-position: 0px -278px;
+				&:hover{
+					background-position: 0px -278px;
+				}
+				&:hover::before{
+					content:"";
+					display: block;
+					height: 210px;
+					width: 160px;
+					position: absolute;
+					bottom: 40px;
+					left:-70px;
+					background: url('../image/footer-sprite-01.png') no-repeat;
+				}
+			}
+			.second{
+				background-position: 0px -321px;
+				&:hover{
+					background-position: 0px -321px;
+				}
+			}
+			.thrid{
+				background-position: 0px -363px;
+				&:hover{
+					background-position: 0px -363px;
+				}
+			}
+		}
+	}
+}
